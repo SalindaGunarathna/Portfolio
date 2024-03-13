@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/Portfolio/static/css/main.97277331.css",
+    "main.js": "/Portfolio/static/js/main.0662d552.js",
+    "static/media/here_image.png": "/Portfolio/static/media/here_image.08060725d4997402893b.png",
+    "static/media/GymWebApp.png": "/Portfolio/static/media/GymWebApp.5c713e0a83b0fbe21a8c.png",
+    "static/media/profile-pic.png": "/Portfolio/static/media/profile-pic.a91c8f97a5f6dec277aa.png",
+    "static/media/Hello.gif": "/Portfolio/static/media/Hello.d93720933c608f6178fb.gif",
+    "static/media/carSaleProject.jpg": "/Portfolio/static/media/carSaleProject.ed49c0db42c2cb06338d.jpg",
+    "static/media/cameramenApp.png": "/Portfolio/static/media/cameramenApp.fa9680c63bf9440c0737.png",
+    "static/media/wpfAplication-01.png": "/Portfolio/static/media/wpfAplication-01.a75fd8bf760f1e175b0c.png",
+    "static/media/facebook2.png": "/Portfolio/static/media/facebook2.3beac97853fad250e2cf.png",
+    "static/media/MLproject.jpg": "/Portfolio/static/media/MLproject.ee2b31e0ed7e2f90eff1.jpg",
+    "static/media/WPFaplication.svg": "/Portfolio/static/media/WPFaplication.a0d333b40cfc679e4b925be49d6fae84.svg",
+    "static/media/sass-icon.svg": "/Portfolio/static/media/sass-icon.8351205a93eafac2e392b26acf7580e1.svg",
+    "static/media/node-icon.svg": "/Portfolio/static/media/node-icon.3dc364b8e9beb3561620274aea4f0844.svg",
+    "static/media/typescript-icon.svg": "/Portfolio/static/media/typescript-icon.17d5e87eac2c9d1dc722ce1e0b60d5df.svg",
+    "static/media/whatsapp.svg": "/Portfolio/static/media/whatsapp.459dad86534ca5699520ed770f3ce605.svg",
+    "static/media/bootstrap-icon.svg": "/Portfolio/static/media/bootstrap-icon.be374cc9bd654654918df2362bcfb240.svg",
+    "static/media/react-icon.svg": "/Portfolio/static/media/react-icon.f1484e295933af0e748d6a01b05a8361.svg",
+    "index.html": "/Portfolio/index.html",
+    "static/media/telegram.svg": "/Portfolio/static/media/telegram.45bf2371ee6528cc27d66c08f8e43356.svg",
+    "static/media/phone-icon.svg": "/Portfolio/static/media/phone-icon.91617f27ac814ef5f29b533ab3d256ec.svg",
+    "static/media/shopify.svg": "/Portfolio/static/media/shopify.162913e43c02c125fd0720d80fc0dba3.svg",
+    "static/media/github.svg": "/Portfolio/static/media/github.d344c0fc70ddfb6de253ddc40adcb086.svg",
+    "static/media/email-icon.svg": "/Portfolio/static/media/email-icon.a83578f914460e952501546655b76165.svg",
+    "static/media/external-link.svg": "/Portfolio/static/media/external-link.74ce2401d684101cc83125c6dac8ce9c.svg",
+    "static/media/html-icon.svg": "/Portfolio/static/media/html-icon.ebfc51e406097a90691ab82f1aa72db3.svg",
+    "static/media/wordpress.svg": "/Portfolio/static/media/wordpress.3bcdd91b50514041e84ea420c14b4812.svg",
+    "static/media/css-icon.svg": "/Portfolio/static/media/css-icon.60a6c50d5a470990f63ee17a3bbd9178.svg",
+    "static/media/linkedin.svg": "/Portfolio/static/media/linkedin.4f00d78f67f451cf01173f7418aa186f.svg",
+    "static/media/js-icon.svg": "/Portfolio/static/media/js-icon.ffcf56dc5498f7bbbec802191c740e5f.svg",
+    "static/media/vue-icon.svg": "/Portfolio/static/media/vue-icon.c286d2da48ffbf281f407b0c4c94271f.svg",
+    "main.97277331.css.map": "/Portfolio/static/css/main.97277331.css.map",
+    "main.0662d552.js.map": "/Portfolio/static/js/main.0662d552.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.97277331.css",
+    "static/js/main.0662d552.js"
+  ]
+}
