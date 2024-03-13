@@ -30,6 +30,7 @@
     transition:
         0.35s font-weight,
         0.45s color;
+    font-size: 3rem;
 }
 
 .hoverText:hover {
@@ -60,13 +61,20 @@
 
 .increasedTextSize {
     font-size: 6rem;
-    /* Adjust the font size as needed */
+    
 }
 
 .typingAnimation {
     animation: typing 3s steps(30, end);
 }
 
-.bubbleAnimation {
+/* .bubbleAnimation {
     animation: bubble 0.5s ease-in-out infinite;
-}
+} */
+
+
+@media only screen and (max-width: 600px) {
+    .increasedTextSize {
+      font-size: 3rem; 
+    }
+  }

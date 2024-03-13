@@ -24,7 +24,7 @@ const BubbleText = () => {
 
   return (
     <h2
-      className={`${styles.hoverText} ${textVisible && styles.typingAnimation} ${hovered && styles.hovered} ${styles.increasedTextSize}`}
+      className={`${styles.hoverText} ${textVisible && styles.typingAnimation} ${hovered && styles.hovered} ${styles.increasedTextSize} ${styles.bubbleAnimation}`}
       onMouseEnter={handleHover}
       onMouseLeave={handleLeave}
     >
@@ -35,4 +35,4 @@ const BubbleText = () => {
   );
 };
 
-export default BubbleText;  
+export default BubbleText;
