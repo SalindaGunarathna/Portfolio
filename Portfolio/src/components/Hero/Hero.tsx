@@ -32,7 +32,7 @@ export function Hero() {
   return (
 
     <div >
-    {/* <Container id="home" style={{ backgroundImage: `url(${HereBackgroud})` }} > */}
+    
 
     <Container id="home"  >
 

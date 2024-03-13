@@ -56,7 +56,7 @@ export function Project() {
                 </header>
                 <div className="body">
 
-                  {/* <img src={webAppImage} alt="Kameleon" className="project-image" /> */}
+                 
 
                   <h3>Gym Management web aplicvation</h3>
                   <p>
