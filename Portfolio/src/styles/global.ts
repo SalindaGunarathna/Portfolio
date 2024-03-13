@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
     --pink: #E31F71;
     --black: #212121;
     --green: #23ce6b;
-    --blue: #0e1a2f; /* Default dark blue */
+    --blue: #050c17; /* Default dark blue */
     scroll-padding-top: 8rem;
 
     &.light{
