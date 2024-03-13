@@ -1,0 +1,72 @@
+/* bubble.module.css */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes bubble {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.hoverText {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    transition:
+        0.35s font-weight,
+        0.45s color;
+}
+
+.hoverText:hover {
+    font-weight: 900;
+    color: rgb(209, 80, 172);
+}
+
+/* To the right */
+.hoverText:hover+.hoverText {
+    font-weight: 500;
+    color: rgb(209, 80, 172);
+}
+
+.hoverText:hover+.hoverText+.hoverText {
+    font-weight: 300;
+}
+
+/* To the left */
+.hoverText:has(+ .hoverText:hover) {
+    font-weight: 500;
+    color: rgb(209, 80, 172);
+}
+
+.hoverText:has(+ .hoverText + .hoverText:hover) {
+    font-weight: 300;
+    color: rgb(226, 43, 101);
+}
+
+.increasedTextSize {
+    font-size: 6rem;
+    /* Adjust the font size as needed */
+}
+
+.typingAnimation {
+    animation: typing 3s steps(30, end);
+}
+
+.bubbleAnimation {
+    animation: bubble 0.5s ease-in-out infinite;
+}
