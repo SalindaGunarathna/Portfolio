@@ -1,4 +1,3 @@
-
 "use client";
 
 import { mailchimp } from "@/resources";
@@ -14,7 +13,8 @@ import {
   Icon,
 } from "@once-ui-system/core";
 import { opacity, SpacingToken } from "@once-ui-system/core";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import emailjs from "@emailjs/browser";
 
 export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...flex }) => {
   const [name, setName] = useState("");
@@ -44,16 +44,24 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
 
     setLoading(true);
     try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, subject, message }),
-      });
+      const serviceId = "service_3o0wmbp";
+      const templateId = "template_bi6kfyo";
+      const publicKey = "CNGdnudbYE96eFcGB";
 
-      if (!res.ok) {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data?.error || "Failed to send message");
+      if (!serviceId || !templateId) {
+        throw new Error(
+          "EmailJS not configured. Please set NEXT_PUBLIC_EMAILJS_SERVICE_ID and NEXT_PUBLIC_EMAILJS_TEMPLATE_ID in .env.local"
+        );
       }
+
+      const templateParams = {
+        from_name: name,
+        reply_to: email,
+        subject,
+        message,
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
 
       setSuccess("Message sent — I'll reply to your email soon.");
       setName("");
@@ -66,6 +74,17 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
       setLoading(false);
     }
   }
+
+  useEffect(() => {
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || process.env.NEXT_PUBLIC_EMAILJS_USER_ID;
+    if (publicKey) {
+      try {
+        emailjs.init(publicKey);
+      } catch (e) {
+        // init is optional; ignore
+      }
+    }
+  }, []);
 
   return (
     <Column
