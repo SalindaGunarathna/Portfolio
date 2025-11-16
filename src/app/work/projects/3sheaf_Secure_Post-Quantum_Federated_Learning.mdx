@@ -1,0 +1,62 @@
+---
+title: "SHEAF: Secure, Post-Quantum Federated Learning"
+publishedAt: "2025-11-06"
+summary: "Designed and implemented SHEAF, a novel Federated Learning framework ensuring high accuracy on non-IID data, secured with a post-quantum-ready protocol."
+images:
+  - "/images/projects/project-01/architech4.png"
+  - "/images/projects/project-01/FL3.png"
+team:
+  - name: "Salinda"
+    role: "Software Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/salinda-gunarathna/"
+  - name: "Hasee"
+    role: "Software Engineer"
+    avatar: "/images/projects/project-01/hasee.png"
+    linkedIn: "https://www.linkedin.com/in/hasee-kumanayake/"
+  - name: "Janugopan"
+    role: "Software Engineer"
+    avatar: "/images/projects/project-01/Janugopan.png"
+    linkedIn: "https://www.linkedin.com/in/janugopan-sundaramoorthy-844912254/"
+  - name: "Nilmi"
+    role: "Software Engineer"
+    avatar: "/images/projects/project-01/Nilmi.png"
+    linkedIn: "https://www.linkedin.com/in/nilmi-kaushallya-lakshani/"
+---
+
+## Overview
+
+SHEAF (Secure Heterogeneity-Aware Efficient Aggregation) is a comprehensive framework for Federated Learning (FL). It is designed to solve three key challenges in real-world FL deployments: poor model quality from diverse client data (non-IID), security vulnerabilities against inference attacks, and high communication/computation costs.
+
+The system balances model quality and privacy by introducing a new aggregation method that weights client updates based on their data heterogeneity (using Jensen Shannon Divergence and Shannon Entropy) and peer-validation signals[cite: 6]. Crucially, it integrates a lightweight, post-quantum-ready security protocol to protect all client-server communications.
+
+## Key Features
+
+- **Heterogeneity-Aware Aggregation**: Implemented novel aggregation weighting methods (AB(1-JSD) and AB_SEBW) that measure client data skew using statistical models and a peer cross-validation system. This improved model stability and convergence speed on non-IID data.
+
+- **Post-Quantum Security Protocol**: I was heavily involved in designing and implementing the lightweight, client-server security protocol[cite: 22]. The protocol uses post-quantum algorithms (ML-KEM for key exchange, Falcon-512 for digital signatures) to ensure long-term security against future quantum computers.
+
+- **Formal Verification**: I personally verified the entire communication protocol using the **Scyther tool**. The analysis proved that our protocol is robust against active adversaries, tampering, impersonation, and eavesdropping, guaranteeing the confidentiality of model updates.
+
+- **Performance & Cost Optimization**: Integrated techniques like weight quantization to compress models, reducing communication bandwidth and computational load. Our post-training quantization reduced the transferred model size by approximately 75% while maintaining full accuracy.
+
+## Technologies Used
+
+- **ML Framework**: PyTorch, NumPy, pandas
+- **Platform**: Google Colab, Python 
+- **Hardware**: NVIDIA L4 GPU, Intel Xeon CPU
+- **Security (PQC)**: ML-KEM-768, Falcon-512, Ascon-80pq (from `liboqs` and `cryptography` libraries)
+- **Verification Tool**: Scyther
+- **Experiment Tracking**: W&B (Weights & Biases)
+
+## Challenges and Learnings
+
+The central challenge was balancing three competing goals: **model accuracy** on non-IID data, **robust security**, and **system efficiency**. Standard FL methods often fail on one of these points.
+
+My primary contribution was tackling the security aspect. Designing a protocol that was both post-quantum secure and lightweight enough for an FL system was a major challenge. I learned to select appropriate PQC algorithms (like Falcon-512 for its minimal signature size) and, most importantly, how to formally prove the protocol's security guarantees using Scyther. This verification step was critical for validating the trustworthiness of our entire framework.
+
+## Outcome
+
+The SHEAF framework, specifically the AB(1-JSD) method, achieved the highest average accuracy (final 84.71%) and fastest convergence on the non-IID CIFAR-10 dataset, outperforming baselines like FedAvg and CAFA.
+
+The PQC security protocol I helped build was successfully integrated with minimal latency overhead, and our quantization technique cut model transfer sizes by ~75% while maintaining 84.87% accuracy. The full implementation and Scyther verification files are available in our public GitHub repository.

@@ -1,0 +1,50 @@
+---
+title: "CI/CD Pipeline for a Reusable Node.js File Upload Service"
+publishedAt: "2025-11-06"
+summary: "Built a complete, automated CI/CD pipeline using Jenkins, Docker, and a 3-instance AWS EC2 setup to deploy a Node.js file upload microservice."
+images:
+  - "/images/projects/cicd/cover.png"
+  - "/images/projects/cicd/diagram.jpg"
+team:
+  - name: "Salinda Gunarathne"
+    role: "Software Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/salinda-gunarathna/"
+---
+
+## Overview
+
+This project involved creating both a standalone **Node.js file upload microservice** and the sophisticated **DevOps pipeline** to automate its deployment. The service is designed to be integrated into any application, providing a simple API to upload images and receive an internet-accessible file path in return.
+
+The entire system is built on a distributed AWS EC2 infrastructure to separate concerns between the CI/CD server, the build agent, and the production host.
+
+## Key Features
+
+- **Node.js File Upload Service**: A lightweight backend service built with **Node.js** and Express, specifically designed to handle multipart/form-data, save files, and return a public URL.
+- **Distributed Jenkins Infrastructure**: Deployed a scalable Jenkins setup across three separate **AWS EC2** instances:
+    1.  **Controller Instance**: Runs the main Jenkins server.
+    2.  **Agent Instance**: Dedicated machine to execute pipeline jobs (test, build).
+    3.  **Host Instance**: The production server where the application is deployed.
+- **Automated CI/CD Pipeline (Jenkins)**: Configured a full CI/CD workflow triggered by `git push` to the main branch. The pipeline automatically:
+    1.  Checks out the latest code from GitHub.
+    2.  Runs automated tests to ensure code quality.
+    3.  Builds a new **Docker** image of the Node.js application.
+- **Continuous Deployment & Publishing**: As the final stage, the pipeline pushes the new Docker image to **Docker Hub**, making it publicly available. It then connects to the host instance to pull and run the latest container, completing the deployment.
+
+## Technologies Used
+
+- **Backend**: Node.js
+- **CI/CD / DevOps**: Jenkins, Docker, Docker Hub
+- **Cloud Infrastructure**: AWS EC2
+
+## Challenges and Learnings
+
+The main challenge was configuring the distributed Jenkins setup. This involved establishing secure communication between the Jenkins Controller and the Agent, as well as giving the pipeline the necessary permissions to push to Docker Hub and remotely execute deployment commands on the host EC2 instance. Writing the `Jenkinsfile` to automate this entire multi-step process from test to deployment was a key learning experience.
+
+## Outcome
+
+The result is a fully automated, reliable deployment system for a useful microservice. Any developer can now pull the public Docker image from Docker Hub and instantly have a working file upload service for their own projects, as documented in the repository.
+
+[View Project on GitHub](https://github.com/SalindaGunarathna/Fully-Automated-CI-CD-PipeLine-FileUpload-Nodejs)
+
+[View on Docker Hub](https://hub.docker.com/r/salindadocker/fileuploder)

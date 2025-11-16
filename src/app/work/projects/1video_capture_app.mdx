@@ -1,0 +1,51 @@
+---
+title: "Real-time Video Analysis and Interactive Q&A Tool"
+publishedAt: "2025-11-06"
+summary: "Developed a Windows application that captures screen video, performs real-time transcription (Whisper) and OCR (PaddleOCR), and enables live Q&A using Google's Gemini LLM."
+images:
+  - "/images/projects/app/cover.png"
+team:
+  - name: "Salinda"
+    role: "Software Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/salinda-gunarathna/"
+---
+
+## Overview
+
+This project is a powerful Windows desktop application designed to analyze and interact with any video content playing on a user's computer in real-time. It captures the screen and system audio, processes the content using a suite of AI models, and provides an intelligent interactive layer over any video, tutorial, or presentation.
+
+The application allows users to get live transcripts, extract any text visible on the screen, and—most importantly—ask questions about what has happened in the video. The entire Python application is packaged using **PyInstaller** and **Inno Setup** into a standalone, installable Windows program.
+
+## Key Features
+
+- **Live Audio Transcription**: Utilizes **faster-whisper** and `sounddevice` to capture system audio loopback (even when using headphones or AirPods) and generate a real-time transcript of all spoken content.
+- **On-Screen Text Extraction (OCR)**: Employs **OpenCV** to capture video frames at runtime and **PaddleOCR** to detect and extract any text displayed on the screen, making text from slides or in-video content searchable.
+- **Multimodal Context Generation**: Feeds video frames to a **Google Gemini** model to generate periodic visual descriptions, adding context to the transcribed audio and extracted text.
+- **Interactive Video Q&A**: Combines the live transcript, OCR text, and visual descriptions into a dynamic context window. A **Tkinter** GUI allows the user to ask questions, which are answered by the Gemini LLM.
+- **Intelligent Q&A with RAG**: Implemented a **Retrieval-Augmented Generation (RAG)** system (using `scikit-learn` and `joblib`) to build a persistent knowledge base from the video's content, allowing for accurate, context-aware answers even for long videos.
+- **Windows Application Packaging**: The entire Python application is bundled into a standalone executable (`.exe`) using **PyInstaller** and delivered in a user-friendly Windows installer created with **Inno Setup**.
+
+## Technologies Used
+
+- **AI / Machine Learning**: Google Gemini (LLM), faster-whisper (OpenAI Whisper), PaddleOCR, OpenCV
+- **Core Language**: Python 3
+- **Audio/Video Capture**: `sounddevice`, `opencv-python`, `pywin32`
+- **GUI**: Tkinter
+- **Packaging & Distribution**: PyInstaller, Inno Setup
+- **Data Handling & RAG**: NumPy, Pillow, scikit-learn, joblib
+
+## Challenges and Learnings
+
+The primary challenge was integrating and running multiple, resource-intensive AI models (Whisper, PaddleOCR, and Gemini) in real-time without freezing the GUI. This required careful implementation of **multithreading** to offload the model inference from the main application thread.
+
+ This project provided a deep practical understanding of multimodal AI, real-time data processing, and the complete lifecycle of packaging a complex Python application for end-users.
+
+## Outcome
+
+The result is a functional Windows application that serves as an intelligent assistant for any video content. It successfully provides live transcripts and enables users to interactively query videos, turning passive viewing into an active learning or analysis session.
+
+## Future Enhancements
+
+- **Dynamic Note Generation**: Implement a new feature to automatically generate and display a running set of summary notes for the user, created dynamically as the video plays.
+- **Audio capturing enhancemen**:captur system audio loopback (WASAPI) on Windows to transcribe content even when the user was wearing headphones or AirPods.

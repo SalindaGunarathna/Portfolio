@@ -1,0 +1,49 @@
+---
+title: "Retail Transaction Analysis with Hadoop MapReduce"
+publishedAt: "2025-11-06"
+summary: "Engineered a custom Java MapReduce job to process and analyze over 530,000 retail transactions, aggregating sales data by country on an Apache Hadoop cluster."
+images:
+  - "/images/projects/hadoop/cover.png"
+
+team:
+  - name: "Salinda Gunarathne"
+    role: "Software Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/salinda-gunarathna/"
+  - name: "Hasee"
+    role: "Software Engineer"
+    avatar: "/images/projects/project-01/hasee.png"
+    linkedIn: "https://www.linkedin.com/in/hasee-kumanayake/"
+  - name: "K.D.S. Udayanthika"
+    role: "Big Data Engineer"
+    avatar: "/images/projets/girl.jpg"
+    linkedIn: "https... "
+---
+
+## Overview
+
+This project for the EC7205 Cloud Computing course involved large-scale data analysis using the **Hadoop MapReduce** framework. We processed the "Online Retail Dataset" from the UCI Machine Learning Repository, which contained over **530,000 transaction records** from a UK-based retailer. The primary goal was to implement a custom MapReduce job to aggregate and analyze sales data by country, providing key business insights.
+
+## Key Features
+
+- **Big Data Processing**: Implemented a custom MapReduce job in **Java** to efficiently process and aggregate the large dataset (~530,000 records).
+- **Sales Aggregation by Country**: The job was designed to parse the raw transaction data and calculate the **total revenue**, **total transaction count**, and **average revenue per transaction** for each country.
+- **Custom MapReduce Components**: We developed custom Java classes to execute the analysis, including a `SalesMapper`, `SalesReducer`, and a `CountryRevenueWritable` for efficient, custom data serialization between the Map and Reduce phases.
+- **Hadoop Environment Setup**: I was involved in configuring and running the entire **Apache Hadoop 3.4.0** environment (HDFS, YARN, MapReduce) in a pseudo-distributed mode on **Windows Subsystem for Linux (WSL)**. This included setting up all core configuration files (`core-site.xml`, `hdfs-site.xml`, `yarn-site.xml`, etc.).
+- **HDFS & YARN Execution**: Successfully managed the HDFS (creating directories, uploading the dataset) and executed the job on the YARN cluster. We monitored its successful completion and resource usage via the Hadoop web UIs (ResourceManager and NameNode).
+
+## Technologies Used
+
+- **Big Data**: Apache Hadoop 3.4.0 (HDFS, YARN, MapReduce)
+- **Language/Build**: Java 17, Maven
+- **Environment**: Windows Subsystem for Linux (WSL) - Ubuntu
+
+## Challenges and Learnings
+
+The main challenge was correctly setting up the entire Hadoop ecosystem from scratch on WSL, which required precise configuration of multiple XML files and environment variables to ensure all daemons (NameNode, DataNode, ResourceManager) ran correctly. Writing the custom MapReduce job required a deep understanding of its programming model, especially creating custom `Writable` data types for efficient data transfer and aggregation.
+
+## Outcome
+
+The MapReduce job successfully processed all **530,104 valid transactions** and aggregated sales data for **76 countries**. The analysis identified the United Kingdom as the top performer in revenue (£9,025,222.08) and volume (485,123 transactions). Interestingly, countries like the Netherlands (£121.00) and Australia (£117.19) showed the highest average revenue per transaction, indicating high-value purchasing patterns. The job completed with zero processing errors, validating our implementation.
+
+[View Project on GitHub](https://github.com/SalindaGunarathna/Hadoop_project)

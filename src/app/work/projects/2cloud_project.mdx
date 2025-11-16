@@ -1,0 +1,58 @@
+---
+title: "Cloud-Native E-Commerce Microservices Platform"
+publishedAt: "2025-11-06"
+summary: "Developed a scalable, cloud-native online shopping platform using a microservices architecture with Spring Boot, Docker, and Kubernetes, featuring a full observability stack."
+images:
+  - "/images/projects/cloud-project/Cloudproject5.png"
+team:
+  - name: "Salinda"
+    role: "Software Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/salinda-gunarathna/"
+  - name: "Hasee"
+    role: "Software Engineer"
+    avatar: "/images/projects/project-01/hasee.png"
+    linkedIn: "https://www.linkedin.com/in/hasee-kumanayake/"
+  - name: "Shashini"
+    role: "Cloud Engineer / Developer"
+    avatar: "/images/projects/girl.jpg"
+    linkedIn: "https... "
+  - name: "Yashoda"
+    role: "Cloud Engineer / Developer"
+    avatar: "/images/projects/girl.jpg"
+    linkedIn: "https... "
+---
+
+## Overview
+
+Development of a complete, cloud-native online shopping platform. The system demonstrates a modern microservices architecture, addressing e-commerce needs like product catalogs (MongoDB), order processing, inventory management, and customer notifications. The entire platform was containerized with **Docker** and orchestrated using **Kubernetes**, focusing on scalability, security, and high availability.
+
+## Key Features
+
+- **Microservices Architecture**: Built with **Spring Boot**, services include an API Gateway, Order Service, Product Service, Inventory Service, and Notification Service.
+- **Asynchronous Communication**: Integrated **Kafka** for event-driven interactions, ensuring reliable order updates via the Notification Service, even if other services are temporarily unavailable.
+- **Security & Identity**: Implemented robust security using **Keycloak** for OAuth2/JWT authentication and authorization. All requests are routed and validated through a central API Gateway.
+- **Containerization & Orchestration**: Developed optimized, multi-stage **Docker** images and deployed all services on **Kubernetes**. We created K8s manifests, managed configuration with ConfigMaps and Secrets, and enabled automatic scaling with the Horizontal Pod Autoscaler. This configuration enables zero-downtime deployments by running multiple pod replicas and applying updates using Kubernetes rolling updates.
+- **Full Observability Stack**: Configured a comprehensive monitoring solution with **Prometheus** for metrics collection, **Loki** for log aggregation, **Tempo** for distributed tracing, and **Grafana** for visualization and dashboards.
+- **CI/CD Pipeline**: Automated build and testing processes using **GitHub Actions**, which pushed new container images to **DockerHub** for deployment.
+
+## Technologies Used
+
+- **Backend**: Spring Boot, Spring Data JPA, Resilience4j
+- **Databases**: MySQL, MongoDB (Polyglot Persistence)
+- **Messaging**: Kafka
+- **Security**: Keycloak, Spring Security, OAuth2, JWT
+- **DevOps**: Docker, Kubernetes, GitHub Actions, NGINX
+- **Monitoring**: Grafana, Prometheus, Loki, Tempo
+
+## Challenges and Learnings
+
+A key challenge was integrating the full stack, especially coordinating Kubernetes manifests with the CI/CD pipeline and configuring Keycloak for JWT authentication across all services. We also focused on balancing synchronous REST calls with asynchronous Kafka messaging to ensure data consistency and prevent order failures.
+
+This project provided deep insights into "polyglot persistence"—using the right database for the job (e.g., MongoDB for flexible product catalogs, MySQL for transactional orders). We also learned that security must be layered, combining the API Gateway, Keycloak, and Spring Security to create a robust, fault-tolerant system.
+
+## Outcome
+
+The project resulted in a fully functional, end-to-end cloud-native application. It successfully demonstrates a scalable and resilient microservices architecture deployed on Kubernetes, complete with centralized authentication and a full observability stack. The experience highlighted the practical benefits of asynchronous messaging for reliability and how cloud-native tools like Kubernetes and Docker simplify management.
+
+[View Project on GitHub](https://github.com/SalindaGunarathna/cloud-project)

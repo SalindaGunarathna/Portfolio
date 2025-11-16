@@ -1,0 +1,56 @@
+---
+title: "AI-Powered Lecture Video Analysis Tool"
+publishedAt: "2025-11-06"
+summary: "Developed a full-stack application using Python (OpenCV, Tesseract) and React to analyze lecture videos, extracting on-screen text and generating LLM-based visual descriptions for each frame."
+images:
+  - "/images/projects/cv/cover.png"
+team:
+  - name: "Salinda"
+    role: "Software Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/salinda-gunarathna/"
+  - name: "Hasee"
+    role: "Software Engineer"
+    avatar: "/images/projects/project-01/hasee.png"
+    linkedIn: "https://www.linkedin.com/in/hasee-kumanayake/"
+  - name: "Janugopan"
+    role: "Software Engineer"
+    avatar: "/images/projects/project-01/Janugopan.png"
+    linkedIn: "https://www.linkedin.com/in/janugopan-sundaramoorthy-844912254/"
+  - name: "Nilmi"
+    role: "Software Engineer"
+    avatar: "/images/projects/project-01/Nilmi.png"
+    linkedIn: "https://www.linkedin.com/in/nilmi-kaushallya-lakshani/"
+---
+
+## Overview
+
+This project is a full-stack application designed to make lecture videos intelligent and searchable. Standard videos are often "black boxes," making it difficult to review or find specific information. This tool processes any video file, analyzing it frame-by-frame to create a rich, time-indexed transcript of both its visual and textual content.
+
+The backend is built with **Python**, leveraging computer vision libraries for analysis, while the frontend is a **React** application that provides an interactive playback experience.
+
+## Key Features
+
+- **Video Frame Processing**: Utilized **OpenCV** to read video files, capture individual frames, and record their exact **timestamps**.
+- **On-Screen Text Extraction (OCR)**: Implemented **pytesseract** to perform Optical Character Recognition on each frame, extracting all visible text from slides, whiteboards, or code editors.
+- **Visual Description (LLM)**: Integrated the **Google Gemini LLM** to analyze each frame and generate a concise, human-readable description of the visual content (e.g., "professor pointing at a diagram," "showing a code snippet").
+- **Interactive React Frontend**: Developed a user interface in **React** where users can upload a video and view the synchronized output. As the video plays, the corresponding extracted text and visual descriptions are displayed in real-time, aligned by their timestamps.
+
+## Technologies Used
+
+- **Backend**: Python
+- **Computer Vision**: OpenCV
+- **OCR**: pytesseract
+- **AI / LLM**: Google Gemini
+- **Frontend**: React
+
+## Challenges and Learnings
+
+The main challenge was performance. Running OCR and an LLM query on every single frame (e.g., 30fps) was computationally expensive. I learned to optimize this by implementing a frame-sampling logic, analyzing frames only once every few seconds or when **OpenCV** detected a significant scene change. This balanced the processing load while still capturing all essential information.
+
+## Outcome
+
+The result is a powerful tool that transforms standard lecture videos into a fully searchable, accessible, and interactive knowledge base. Users can find specific moments by searching for a keyword (from OCR) and understand the visual context of the lecture (from the LLM) without having to re-watch the entire video.
+
+
+[View Project on GitHub](https://github.com/SalindaGunarathna/video-onscreen-text-extraction)

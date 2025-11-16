@@ -1,0 +1,52 @@
+---
+title: "Full-Stack Car Sale and Rental Platform"
+publishedAt: "2025-11-06"
+summary: "Developed a comprehensive, full-stack web application for a car dealership, featuring two distinct microservices for car sales (Node.js/MongoDB) and car rentals (Spring Boot/PostgreSQL)."
+images:
+  - "/images/projects/webapp/cover.png"
+team:
+  - name: "Salinda"
+    role: "Software Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/salinda-gunarathna/"
+  - name: "Ranga"
+    role: "DevOps Engineer / Developer"
+    avatar: "/images/projects/boy.jpg"
+    linkedIn: "https... "
+  - name: "Sawindiya"
+    role: "DevOps Engineer / Developer"
+    avatar: "/images/projects/girl.jpg"
+    linkedIn: "https... "
+  - name: "Sulakshani"
+    role: "DevOps Engineer / Developer"
+    avatar: "/images/projects/girl.jpg"
+    linkedIn: "https... "
+---
+
+## Overview
+
+This project was a full-stack web application built for a client's car dealership in Matale. The platform needed to support two distinct business operations: a public-facing **car sales** marketplace and a separate **car rental** management system. To achieve this, I designed and implemented a microservices-style, using the best technology for each job.
+
+## Key Features
+
+- **Car Sale Module**: Developed a complete e-commerce system for car sales. The backend was built with **Node.js** and **Express**, providing a fast, non-blocking API. A **MongoDB** database was used to store flexible car listings with varying attributes and images.
+- **Car Rental Module**: Built a robust, transactional system for managing car rentals. This backend was implemented using **Spring Boot** (Java), ideal for its strong typing and security features. A **PostgreSQL** database was used to handle structured booking data, user accounts, and payment records.
+- **Unified React Frontend**: Created a seamless user experience by developing a single **React** application. This frontend intelligently routes requests to either the Node.js or Spring Boot backend, depending on whether the user is browsing cars for sale or managing a rental.
+- **Polyglot Persistence**: Intentionally used two different database types—MongoDB for the document-oriented, flexible needs of sales listings, and PostgreSQL for the relational, transactional integrity required by the rental and booking system.
+
+## Technologies Used
+
+- **Frontend**: React
+- **Sales Backend**: Node.js, Express
+- **Rental Backend**: Spring Boot (Java)
+- **Databases**: MongoDB, PostgreSQL
+
+## Challenges and Learnings
+
+The primary challenge was integrating two completely different backend technology stacks (Node.js/MongoDB and Spring Boot/PostgreSQL) into one cohesive React application. This involved managing separate API endpoints, handling authentication across both services, and maintaining a consistent application state in the frontend.
+
+This project was a fantastic exercise . It taught me how to select the right tool for each specific task—using Node.js for its speed in I/O operations (like serving sales listings) and Spring Boot for its robust, secure handling of transactional data (like rental bookings).
+
+## Outcome
+
+The result is a complete, custom-built platform that successfully meets the client's diverse business needs. The application allows them to manage both their car sales inventory and their rental fleet from a single, unified web portal, providing a professional and efficient experience for both their staff and their customers.

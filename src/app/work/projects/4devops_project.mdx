@@ -1,0 +1,62 @@
+---
+title: "Automated DevOps CI/CD Pipeline for a Full-Stack Application"
+publishedAt: "2025-11-06"
+summary: "Designed and built a complete CI/CD pipeline using Jenkins, Terraform, Ansible, Docker, and Kubernetes (with ArgoCD) to automate the build, test, and deployment of a full-stack application on AWS."
+images:
+  - "/images/projects/devops/devops2.png"
+team:
+  - name: "Salinda"
+    role: "Software Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/salinda-gunarathna/"
+  - name: "Ranga"
+    role: "DevOps Engineer / Developer"
+    avatar: "/images/projects/boy.jpg"
+    linkedIn: "https... "
+---
+
+## Overview
+
+This project (for ECE6211 DevOps Engineering) involved designing and implementing a comprehensive, automated CI/CD pipeline for a full-stack "Otto-rent-system" application. The goal was to fully automate the process from code commit to deployment, incorporating modern DevOps practices like Infrastructure as Code (IaC), configuration management, containerization, and GitOps.
+
+## Key Features
+
+- **Infrastructure as Code (IaC)**: Used **Terraform** to define and provision the entire AWS cloud infrastructure, including EC2 instances for Jenkins, agent/host machines, and an Amazon RDS database.
+- **Automated Configuration Management**: Deployed **Ansible** playbooks to automatically configure the provisioned EC2 instances, installing all necessary software such as Docker, Kubernetes, and ArgoCD.
+- **CI Pipeline (Jenkins)**: Configured a multi-stage Jenkins pipeline on an EC2 instance. The pipeline, triggered by GitHub webhooks, automatically performs:
+    1.  **Checkout**: Pulls the latest code.
+    2.  **Build**: Compiles the Java backend using **Maven**.
+    3.  **Test**: Runs all unit tests with Maven.
+    4.  **Package**: Builds a Docker image from the compiled application.
+    5.  **Publish**: Pushes the new Docker image to Docker Hub.
+- **Automated Deployment**: The pipeline's final stage pulls the new image onto the EC2 host, stops the old container, and runs the new one, ensuring a consistent update process.
+- **GitOps-Ready Design**: The architecture includes **Argo CD** and **Kubernetes** as a future-proof enhancement. In this flow, Jenkins updates a Git manifest repository, and Argo CD automatically detects the change and syncs the new application version to the Kubernetes cluster.
+
+## Technologies Used
+
+- **CI/CD**: Jenkins, Argo CD
+- **IaC**: Terraform
+- **Config Management**: Ansible
+- **Containerization**: Docker
+- **Orchestration**: Kubernetes
+- **Build**: Maven
+- **Cloud**: AWS (EC2, RDS)
+- **Scripting**: Python
+
+## Challenges and Learnings
+
+The primary challenge was integrating multiple, distinct DevOps tools into a single, seamless workflow. Configuring Terraform to provision resources, having Ansible correctly configure them, and ensuring Jenkins had the right permissions to control this entire process was a complex integration task.
+
+This project provided deep practical experience in building a modern, end-to-end automation pipeline. It demonstrated how IaC and configuration management create reliable, repeatable environments and how a GitOps-ready design with ArgoCD and Kubernetes can fully automate continuous delivery.
+
+## Outcome
+
+The result is a consistent, reliable, and fully automated pipeline that builds, tests, and deploys both frontend and backend applications with minimal manual intervention. This system significantly reduces the risk of human error and accelerates the development lifecycle.
+
+[View Backend Pipeline Repo](https://github.com/SalindaGunarathna/Otto-rent-system-backend)
+
+[View Backend Manifest Repo (GitOps)](https://github.com/SalindaGunarathna/Otto-rent-Argocd_Kubernetes)
+
+[View Frontend Pipeline Repo](https://github.com/RangaDM/Otto_cars_Frontend_Ultimate-CICD-pipeline)
+
+[View Frontend Manifest Repo (GitOps)](https://github.com/RangaDM/Otto_cars_Frontend-gitops-infra)
