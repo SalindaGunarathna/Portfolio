@@ -23,6 +23,7 @@ export type Person = {
   avatar: string;
   /** Email address */
   email: string;
+  cv : string;
   /** IANA time zone location */
   location: IANATimeZone;
   /** Languages spoken */
@@ -106,6 +107,7 @@ export interface Home extends BasePageConfig {
  * @description Configuration for the About page, including sections for table of contents, avatar, calendar, introduction, work experience, studies, and technical skills.
  */
 export interface About extends BasePageConfig {
+  
   /** Table of contents configuration */
   tableOfContent: {
     /** Whether to display the table of contents */

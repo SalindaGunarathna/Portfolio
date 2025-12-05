@@ -6,8 +6,9 @@ const person: Person = {
   lastName: "Gunarathna",
   name: `Salinda Gunarathna`,
   role: "Computer Engineer",
-  avatar: "/images/avatar.jpg",
+  avatar: "/images/avatar1.jpg",
   email: "salindagunarathne@gmail.com",
+  cv: "https://drive.google.com/file/d/1YdLhwWqV7n7R2wOuc2yHPRgxQppCBscY/view?usp=sharing",
   location: "Asia/Colombo", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["English", "Sinhala"], // optional: Leave the array empty if you don't want to display languages
 };
@@ -194,7 +195,7 @@ and grow as a professional engineer in a dynamic and
           title: "Ultimate AWS Certified Solutions Architect Associate 2025",
           provider: "Udemy",
           year: "2025",
-          credentialUrl: "https://ude.my/UC-97df2cf3-9136-4a98-8b1a-755e221a4b5f"
+          credentialUrl: "https://www.udemy.com/certificate/UC-3fc000b2-890e-47e3-8a47-880acddab733"
         },
         {
           title: "Soft Skills Development",
