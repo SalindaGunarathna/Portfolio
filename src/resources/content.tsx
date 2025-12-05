@@ -91,8 +91,9 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-I am a final-year Computer Engineering undergraduate with a strong
- passion for software and DevOps engineering. I’m deeply committed to
+I am a final-year Computer Engineering student and soon-to-be fresh
+ graduate with a strong passion for software and DevOps engineering.
+  I’m deeply committed to
  designing and developing reliable, scalable applications while 
  continuously exploring cloud technologies, AI integration, and system security.
 
